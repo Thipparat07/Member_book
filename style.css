@@ -1,0 +1,10 @@
+/* จัดให้อยู่ตรงกลาง */
+.centered-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 90vh;
+  }
+
+  
