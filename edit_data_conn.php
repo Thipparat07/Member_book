@@ -21,7 +21,7 @@ $sql = "UPDATE employees SET firstName = ?, lastName = ? ,nicknamE = ?, email = 
 
 //เตรียมคำสั่ง SQL และผูกค่าตัวแปร
 $stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, "ssssssi", $firstname, $lastname, $nickname, $email, $phone, $image,$id);
+mysqli_stmt_bind_param($stmt, "ssssssi", $firstname, $lastname, $nickname, $email, $phone, $image, $id);
 
 //บันทึกลงฐานข้อมูลแล้ว
 if (mysqli_stmt_execute($stmt)) {

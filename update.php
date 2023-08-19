@@ -1,8 +1,0 @@
-<?php
-
-$data = array();
-$data = []
-
-
-
-?>

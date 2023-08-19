@@ -1,0 +1,5 @@
+.body {
+    background-image: url("img/wallpaperflare.com_wallpaper.jpg");
+    background-size: cover; /* ปรับขนาดรูปเพื่อพอดีกับพื้นที่ */
+    background-repeat: no-repeat; /* ไม่ต้องทำซ้ำพื้นหลัง */
+    }

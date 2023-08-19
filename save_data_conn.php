@@ -4,7 +4,7 @@ include 'connect.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-//รับค่าตัวแปรมาจากไฟล์ add
+//รับค่าตัวแปรมาจากไฟล์ addaddinformation.php
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $nickname = $_POST['nickname'];

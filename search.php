@@ -1,6 +1,17 @@
 <?php
     require_once "connect.php";//ดึงข้อมูล
 
+    $conn = new mysqli($servername,$username,$password,$dbname);
+
+    // ส่งคำค้นหาจาก search_id 
+    $search_id = $_POST["search_id"];
+
+    // สร้างคำสั่งค้นหาข้อมูล
+    $sql = "SELECT * FROM employees WHERE firstName LIKE '%$search_id%' OR lastName LIKE '%$search_id%' OR nickname LIKE '%$search_id%' OR phone LIKE '%$search_id%'";
+   
+    $result = $conn->query($sql);
+    $conn->close();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,16 +22,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- แสดงข้อมูล -->
-<div class="container mt-3" >
+<div class="container mt-3">
     <h2>Member book</h2>
   
             <!-- ค้นหาข้อมูล -->
-            <div class="col-4">
+             <div class="col-4">
                 <form action="search.php" method="POST">
                     <div class="input-group mb-3">
                         <input type="text" name="search_id" class="form-control" placeholder="ค้นหาจากชื่อ นามสกุล ชื่อเล่น เบอร์โทร" required>
@@ -29,13 +40,21 @@
                 </form>
             </div>
 
+            
           <!-- เพิ่มข้อมูลใหม่ -->
-          <a class="btn btn-success" href="add_data.php">
+          <a class="btn btn-success" href="addinformation.php">
               <!-- ไอค่อน -->
               <i class="bi bi-person-add"></i> เพิ่มข้อมูลใหม่
           </a>
 
-  <table class="table table-hover" >
+            <!-- กลับหน้าหลัก -->
+            <a class="btn btn-success" href="index.php">
+                <!-- ไอค่อน -->
+                <i class="bi bi-arrow-up-left-square-fill"></i> กลับหน้าหลัก
+            </a>
+
+  
+  <table class="table table-hover">
     <thead>
       <tr>
         <!-- ชื่อตาราง -->
@@ -48,11 +67,10 @@
       </tr>
     </thead>
     <tbody>
-
       <!-- ลูปช้อมูล -->
+      
       <?php if ($result->num_rows > 0) { 
         while ($val = $result->fetch_assoc()) {?>
-
       <tr>
         <!-- แสดงข้อมูล -->
         <td><?php echo $val['id'] ?></td>
@@ -61,37 +79,40 @@
         <td><?php echo $val['lastName'] ?></td>
         <td><?php echo $val['nickname'] ?></td>
 
-        <btnall method="post">
+        <btnall method="POST">
           <!-- ปุ่มต่างๆ -->
           <!-- ข้อมูลเพิ่มเติม ไฟล์ showallinformation.php -->
           <td>
-              <a class="btn btn-primary" href="show_details.php?id=<?php echo $val['id']; ?>">
+                <a class="btn btn-primary" href="showallinformation.php?id=<?php echo $val['id']; ?>">
                     <!-- ไอค่อน -->
                     <i class="bi bi-eye-slash"></i> ข้อมูลเพิ่มเติม
-              </a>
+                </a>
 
-              <!-- แก้ไขข้อมูล ไฟล์ etidinformation.php-->
-              <a class="btn btn-warning" href="edit_form.php?id=<?php echo $val['id']; ?>"
+            <!-- แก้ไขข้อมูล ไฟล์ etidinformation.php-->
+                <a class="btn btn-warning" href="etidinformation.php?id=<?php echo $val['id']; ?>"
                     onclick="return confirm('ยืนยันการแก้ไขข้อมูล <?php echo $val['id']; ?>')">
-                      <!-- ไอค่อน -->
-                      <i class="bi bi-pencil-square" ></i> แก้ไข
-              </a>
+                    <!-- ไอค่อน -->
+                    <i class="bi bi-pencil-square" ></i> แก้ไข
+                </a>
 
-              <!-- ลบข้อมูล ไฟล์ delete.php-->
-              <a class="btn btn-danger" href="delete_conn.php?id=<?php echo $val['id']; ?>"
-                  onclick="return confirm('ยืนยันการลบข้อมูล <?php echo $val['id']; ?>')">
+            <!-- ลบข้อมูล ไฟล์ delete.php-->
+                <a class="btn btn-danger" href="delete.php?id=<?php echo $val['id']; ?>"
+                    onclick="return confirm('ยืนยันการลบข้อมูล <?php echo $val['id']; ?>')">
                     <!-- ไอค่อน -->
                     <i class="bi bi-trash3"></i> ลบ
-              </a>
+                </a>
+
             </td>
         </btnall>
+
       </tr>
-      
-      <?php }
-      } else {
-        echo "ไม่พบข้อมูล";
-    } ?>
+        <?php } } else { ?>
+            <div class="alert alert-danger">
+                <b>ไม่มีข้อมูล</b>
+            </div>
+        <?php } ?>
+
     </tbody>
   </table>
-</div>
+</>
 
