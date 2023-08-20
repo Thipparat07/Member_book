@@ -46,7 +46,7 @@
     </style>
 </head>
 <body>
-
+<div class="container centered-element">
 <!-- แสดงข้อมูล -->
 <div class="container mt-3" style="color: white;">
     <h2>Member book</h2>
@@ -141,6 +141,7 @@
 
     </tbody>
   </table>
+  </div>
   </div>
   </div>
   </div>
