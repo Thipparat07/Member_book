@@ -35,82 +35,82 @@
     background-repeat: no-repeat; /* ไม่ต้องทำซ้ำพื้นหลัง */
     }
     </style>
+</style>
 </head>
 
 <body>
 
-    
     <div class="container" style="margin-top: 10px; color: azure; ">
         <div class="row">
             <div class="col-12">
-                <h1>ระบบข้อมูลสมาชิก</h1>
+                <h1>แก้ไขข้อมูลสมาชิก</h1>
 
         <!-- เพิ่มข้อมูลใหม่ -->
         <a class="btn btn-success" href="index.php">
               <!-- ไอค่อน -->
               <i class="bi bi-arrow-up-left-square-fill"></i> กลับหน้าแรก
         </a>
+    </div>
     <div class="container centered-element">
         <div class="row">
             <div class="col-12 centerrow">
                 <div class="card" style="width: 600px; background-color: #ffffff05; backdrop-filter: blur(30px); color: azure;  ">
-                    <div class="card-body">
-                        <h3 class="card-title">แก้ไขข้อมูลสมาชิก </h3>
+                    <div class="card-body ">
+                        <h3 class="card-title ">แก้ไขข้อมูลสมาชิก </h3>
                         <!-- ส่งข้อมูลเป็น post ไปที่ไฟล์ register.php -->
-                        <form method="POST" action="edit_data_conn.php">
+                        <form action="edit_data_conn.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-
-                            <div class="container">
-                                <div class="row" style="margin: 15px;">
+                        <div class="row" style="margin: 15px; ">
                                     <div class="col-2">ชื่อ</div>
                                     <div class="col-10">
-                                    <input type="text" class="form-control" id="firstName" name="firstName" value="<?php echo $row['firstName']; ?>">
+                                        <input class="form-control" type="text" name="firstName" value="<?php echo $row['firstName']?>">
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row" style="margin: 15px; ">
                                     <div class="col-2">นามสกุล</div>
                                     <div class="col-10">
-                                    <input type="text" class="form-control" id="lastName" name="lastName" value="<?php echo $row['lastName']; ?>">
+                                        <input class="form-control" type="text" name="lastName" value="<?php echo $row['lastName']?>">
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row" style="margin: 15px; ">
                                     <div class="col-2">ชื่อเล่น</div>
                                     <div class="col-10">
-                                        <input type="text" class="form-control" id="nickname" name="nickname" value="<?php echo $row['nickname']; ?>">
+                                        <input class="form-control" type="text" name="nickname" value="<?php echo $row['nickname']?>">
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row" style="margin: 15px; ">
                                     <div class="col-2">อีเมล์</div>
                                     <div class="col-10">
-                                        <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['email']; ?>">
+                                        <input class="form-control" type="email" name="email" value="<?php echo $row['email']?>">
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row" style="margin: 15px; ">
                                     <div class="col-2">โทรศัพท์</div>
                                     <div class="col-10">
-                                        <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $row['phone']; ?>">
+                                        <input class="form-control" type="text" name="phone" value="<?php echo $row['phone']?>">
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row" style="margin: 15px; ">
                                     <div class="col-3">รูปภาพ (URL)</div>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" id="image" name="image" value="<?php echo $row['image']; ?>">
+                                        <input class="form-control" type="text" name="image" value="<?php echo $row['image']?>">
                                     </div>
                                 </div>
 
-                                <div class="row" style=" width: 50%; margin: 0 auto; ">
+                            <div class="container" style=" width: 50%; margin: 0 auto; ">
+                                <div class="row" style=" width: 50%; margin: 0 auto;">
                                     <div class="col-9 "></div>
-                                    <div class="col-3" style="display: flex; justify-content: end;">
-                                        <input  class="btn btn-primary" type="submit" href="edit_data_conn" value="ยืนยัน">
+                                    <div class="col-3" style="display: flex; justify-content: end; ">
+                                        <input class="btn btn-primary" type="submit" name="edit_data_conn" value="ยืนยัน">
                                     </div>
                                 </div>
                             </div>
+                            
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
 </body></html>

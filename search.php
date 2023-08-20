@@ -83,20 +83,20 @@
           <!-- ปุ่มต่างๆ -->
           <!-- ข้อมูลเพิ่มเติม ไฟล์ showallinformation.php -->
           <td>
-                <a class="btn btn-primary" href="showallinformation.php?id=<?php echo $val['id']; ?>">
+                <a class="btn btn-primary" href="show_details.php?id=<?php echo $val['id']; ?>">
                     <!-- ไอค่อน -->
                     <i class="bi bi-eye-slash"></i> ข้อมูลเพิ่มเติม
                 </a>
 
             <!-- แก้ไขข้อมูล ไฟล์ etidinformation.php-->
-                <a class="btn btn-warning" href="etidinformation.php?id=<?php echo $val['id']; ?>"
+                <a class="btn btn-warning" href="edit_form.php?id=<?php echo $val['id']; ?>"
                     onclick="return confirm('ยืนยันการแก้ไขข้อมูล <?php echo $val['id']; ?>')">
                     <!-- ไอค่อน -->
                     <i class="bi bi-pencil-square" ></i> แก้ไข
                 </a>
 
             <!-- ลบข้อมูล ไฟล์ delete.php-->
-                <a class="btn btn-danger" href="delete.php?id=<?php echo $val['id']; ?>"
+                <a class="btn btn-danger" href="delete_conn.php?id=<?php echo $val['id']; ?>"
                     onclick="return confirm('ยืนยันการลบข้อมูล <?php echo $val['id']; ?>')">
                     <!-- ไอค่อน -->
                     <i class="bi bi-trash3"></i> ลบ
