@@ -34,17 +34,17 @@
 </head>
 
 <body>
-    <div class="container " style="margin-top: 10px; color: azure;">
+    <div class="container ">
         <div class="row">
             <div class="col-12">
-                <h1>ระบบข้อมูลสมาชิก</h1>
+                <h1>ระบบแสดงข้อมูลสมาชิก</h1>
             </div>
         </div>
     </div>
 <div class="container centered-element ">
     <div class="row">
         <div class="col-12 centerrow">
-            <div class="card" style="width: 600px; background-color: #ffffff05; backdrop-filter: blur(20px); color: azure; border: 3px solid #fff;">
+            <div class="card" style=" border: 3px solid #fff;">
                 <div class="card-body ">
                     <h3 class="card-title">ข้อมูลสมาชิก 
                         <br>
@@ -52,35 +52,35 @@
                     </h3>
                     <div class="container">
                         <div class="row">
-                            <div class="col-4" style=" display: flex; justify-content: center;">
+                            <div class="col-4">
                                 <img src="<?php echo $row['image']; ?>" class="rounded" alt="img-thumbnail" width="150" height="150" >
                             </div>
                             <div class="col-8">
-                                <div class="row" style="margin: 15px;">
+                                <div class="row">
                                     <div class="col-4">ชื่อ</div>
                                     <div class="col-8">
                                         <?php echo $row['firstName'] ?>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row">
                                     <div class="col-4">นามสกุล</div>
                                     <div class="col-8">
                                         <?php echo $row['lastName'] ?>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row">
                                     <div class="col-4">ชื่อเล่น</div>
                                     <div class="col-8">
                                         <?php echo $row['nickname'] ?>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row">
                                     <div class="col-4">อีเมล์</div>
                                     <div class="col-8">
                                         <?php echo $row['email'] ?>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px;">
+                                <div class="row">
                                     <div class="col-4">โทรศัพท์</div>
                                     <div class="col-8">
                                         <?php echo $row['phone'] ?>

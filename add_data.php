@@ -1,7 +1,7 @@
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PHP Member Book</title>
+    <title>Add</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +23,10 @@
 
 <body>
 
-    <div class="container" style="margin-top: 10px; color: azure; ">
+    <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>ลงทะเบียนสมาชิกใหม่</h1>
+                <h1>ลงทะเบียนสมาชิก</h1>
 
         <!-- เพิ่มข้อมูลใหม่ -->
         <a class="btn btn-success" href="index.php">
@@ -37,45 +37,45 @@
     <div class="container centered-element">
         <div class="row">
             <div class="col-12 centerrow">
-                <div class="card" style="width: 600px; background-color: #ffffff05; backdrop-filter: blur(30px); color: azure;  ">
+                <div class="card">
                     <div class="card-body ">
-                        <h3 class="card-title ">ลงทะเบียนสมาชิกใหม่ </h3>
+                        <h3 class="card-title ">ลงทะเบียนสมาชิก </h3>
                         <!-- ส่งข้อมูลเป็น post ไปที่ไฟล์ register.php -->
                         <form action="save_data_conn.php" method="post">
-                        <div class="row" style="margin: 15px; ">
+                        <div class="row">
                                     <div class="col-2">ชื่อ</div>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="firstname">
+                                        <input class="form-control" type="text" name="firstname" required>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px; ">
+                                <div class="row">
                                     <div class="col-2">นามสกุล</div>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="lastname">
+                                        <input class="form-control" type="text" name="lastname" required>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px; ">
+                                <div class="row">
                                     <div class="col-2">ชื่อเล่น</div>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="nickname">
+                                        <input class="form-control" type="text" name="nickname" required>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px; ">
+                                <div class="row">
                                     <div class="col-2">อีเมล์</div>
                                     <div class="col-10">
-                                        <input class="form-control" type="email" name="email">
+                                        <input class="form-control" type="email" name="email" required>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px; ">
+                                <div class="row">
                                     <div class="col-2">โทรศัพท์</div>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="phone">
+                                        <input class="form-control" type="text" name="phone" required>
                                     </div>
                                 </div>
-                                <div class="row" style="margin: 15px; ">
+                                <div class="row">
                                     <div class="col-3">รูปภาพ (URL)</div>
                                     <div class="col-9">
-                                        <input class="form-control" type="text" name="image">
+                                        <input class="form-control" type="text" name="image" required>
                                     </div>
                                 </div>
 
@@ -83,7 +83,7 @@
                                 <div class="row" style=" width: 50%; margin: 0 auto;">
                                     <div class="col-9 "></div>
                                     <div class="col-3" style="display: flex; justify-content: end; ">
-                                        <input class="btn btn-primary" type="submit" name="save_data_conn" value="ลงทะเบียน">
+                                        <input class="btn btn-primary" type="submit" name="save_data_conn" value="ลงทะเบียน" >
                                     </div>
                                 </div>
                             </div>

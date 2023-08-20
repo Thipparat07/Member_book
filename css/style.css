@@ -1,4 +1,9 @@
 /* จัดให้อยู่ตรงกลาง */
+.container{
+    margin-top: 10px;
+     color: azure;
+}
+
 .centered-element {
     display: flex;
     justify-content: center;
@@ -25,6 +30,18 @@
   th {
       background-color: #4CAF50;
       color: white;
+  }
+
+  .card{
+    width: 600px;
+    background-color: #ffffff05;
+    backdrop-filter: blur(30px);
+    color: azure;
+    /* border: 3px solid #fff; */
+  }
+
+  .row{
+    margin: 15px;
   }
 
 

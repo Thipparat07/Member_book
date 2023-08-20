@@ -13,11 +13,15 @@ $phone = $_POST['phone'];
 $image = $_POST['image'];
 
 //คำสั่งเพิ่มข้อมูลลงตาราง
-$sql = "INSERT INTO employees (firstname,lastname,nickname,email,phone,image) 
-Values('$firstname','$lastname','$nickname','$email','$phone','$image')";
+$sql = "INSERT INTO employees (firstName,lastName,nickname,email,phone,image) 
+Values(?,?,?,?,?,?)";
+
+//เตรียมคำสั่ง SQL และผูกค่าตัวแปร
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "ssssss", $firstname, $lastname, $nickname, $email, $phone, $image);
 
 //บันทึกลงฐานข้อมูลแล้ว
-$result = mysqli_query($conn,$sql);
+$result = mysqli_stmt_execute($stmt);
 
 //เช็คว่าบันทึกได้ไหม
 if ($result) {
